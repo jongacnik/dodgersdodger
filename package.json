@@ -1,0 +1,29 @@
+{
+  "name": "dodgersdodger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify -p [ browserify-livereload --host dodgersdodger.test ] -t sheetify app/index.js -o docs/assets/bundle.js",
+    "build": "browserify -t nanohtml -t sheetify -g [ babelify --presets [ es2015 ] ] -p tinyify app/index.js | uglifyjs > docs/assets/bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "choo": "^6.12.1",
+    "gr8": "^3.1.5",
+    "ress": "^1.2.2",
+    "sheetify": "^7.3.3",
+    "xhr": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify-livereload": "^1.0.10",
+    "tinyify": "^2.4.3",
+    "uglify-js": "^3.4.2",
+    "watchify": "^3.11.0"
+  }
+}
