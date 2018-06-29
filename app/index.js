@@ -97,6 +97,7 @@ var app = choo()
 
 app.route('/', view)
 
+app.use(require('./viewport'))
 app.use(function (state, emitter) {
   state.open = false
   state.events.TOGGLE = 'toggle'
@@ -137,7 +138,7 @@ function view (state, emit) {
   if (state.loading) return html`<body></body>`
 
   return html`
-    <body class="${prefix} vhmn100 x xac xjc tac oh lh1 usn ${state.game ? 'active' : ''}">
+    <body class="${prefix} vh100 x xac xjc tac oh lh1 usn ${state.game ? 'active' : ''}">
       <div class="spin fenway big-text">
         ${state.game 
           ? html`<div>Dodge<div class="ttl">${template.render(new Date(state.game.date))}</div></div>`
