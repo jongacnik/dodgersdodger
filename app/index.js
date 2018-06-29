@@ -110,7 +110,7 @@ app.use(function (state, emitter) {
   state.loading = true
   state.game = null
 
-  xhr('https://statsapi.mlb.com:80/api/v1/schedule?sportId=1&busted=' + buster.render(new Date()), function (err, resp, body) {
+  xhr('https://statsapi.mlb.com/api/v1/schedule?sportId=1&busted=' + buster.render(new Date()), function (err, resp, body) {
     try {
       var a = JSON.parse(body)
       var games = a.dates[0].games.map(game => {
